@@ -61,10 +61,9 @@ public class RealEstateController implements Initializable {
 
     @FXML
     public void handleAdLoading(ActionEvent actionEvent) {
-        System.out.println(sellerId);
         int adQuantity = 0;
         for (Realesate realesate : realesates) {
-            if (realesate.getSellerId() == sellerId) {
+            if (realesate.getSeller().getId() == sellerId) {
                 adQuantity++;
             }
         }
@@ -74,6 +73,5 @@ public class RealEstateController implements Initializable {
         } else {
             adNumber.setText("Nincs hirdetés");
         }
-
     }
 }

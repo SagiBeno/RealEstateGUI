@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Realesate {
     int area;
-    int categoryId;
+    Category category;
     LocalDate createAt;
     String description;
     int floors;
@@ -13,14 +13,17 @@ public class Realesate {
     String imageUrl;
     String latLong;
     int rooms;
-    int sellerId;
+    Seller seller;
+
+    private double latitude;
+    private double longitude;
 
     public void setArea(int area) {
         this.area = area;
     }
 
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public void setCreateAt(LocalDate createAt) {
@@ -55,16 +58,16 @@ public class Realesate {
         this.rooms = rooms;
     }
 
-    public void setSellerId(int sellerId) {
-        this.sellerId = sellerId;
+    public void setSeller(Seller seller) {
+        this.seller = seller;
     }
 
     public int getArea() {
         return area;
     }
 
-    public int getCategoryId() {
-        return categoryId;
+    public Category getCategory() {
+        return category;
     }
 
     public LocalDate getCreateAt() {
@@ -99,13 +102,13 @@ public class Realesate {
         return rooms;
     }
 
-    public int getSellerId() {
-        return sellerId;
+    public Seller getSeller() {
+        return seller;
     }
 
-    public Realesate(int area, int categoryId, LocalDate createAt, String description, int floors, boolean freeOfCharge, int id, String imageUrl, String latLong, int rooms, int sellerId) {
+    public Realesate (int area, Category category, LocalDate createAt, String description, int floors, boolean freeOfCharge, int id, String imageUrl, String latLong, int rooms, Seller seller) {
         this.setArea(area);
-        this.setCategoryId(categoryId);
+        this.setCategory(category);
         this.setCreateAt(createAt);
         this.setDescription(description);
         this.setFloors(floors);
@@ -114,6 +117,6 @@ public class Realesate {
         this.setImageUrl(imageUrl);
         this.setLatLong(latLong);
         this.setRooms(rooms);
-        this.setSellerId(sellerId);
+        this.setSeller(seller);
     }
 }
